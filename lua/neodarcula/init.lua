@@ -2,36 +2,36 @@
 local M = {}
 
 M.colors = {
-	fg = "#A9B7C6", -- General text
+	fg = "#BCBEC4", -- General text
 	bg_inactive = "#000000", -- Inactive window background
-	bg = "#1B1B1B",
+	bg = "#1E1F22",
 	selection = "#214283", -- Selection background (more blue)
-	current_line = "#323232", -- Current line highlight
-	string = "#6A8759", -- Strings
-	number = "#6897BB", -- Numbers
-	keyword = "#CC7832", -- Keywords (e.g., public, class, implements, enum)
-	comment = "#808080", -- Comments
-	constant = "#9876AA", -- Constants
-	type = "#CC7832", -- Types (used sparingly, not for enum/class names)
-	func = "#6897BB", -- Functions/Methods/Constructors declaration (blue)
-	operator = "#A9B7C6", -- Operators (matches foreground)
+	current_line = "#26282E", -- Current line highlight
+	string = "#6AAB73", -- Strings
+	number = "#56A8F5", -- Numbers
+	keyword = "#CF8E6D", -- Keywords (e.g., public, class, implements, enum)
+	comment = "#7A7E85", -- Comments
+	constant = "#C77DBB", -- Constants
+	type = "#CF8E6D", -- Types (used sparingly, not for enum/class names)
+	func = "#56A8F5", -- Functions/Methods/Constructors declaration (blue)
+	operator = "#BCBEC4", -- Operators (matches foreground)
 	error = "#BC3F3C", -- Errors
-	warning = "#A9A557", -- Warnings
+	warning = "#C29E4A", -- Warnings
 	info = "#606060", -- Info
 	hint = "#606060", -- Hints (same as info in Darcula)
 	gray = "#606366", -- UI elements like LineNr
-	annotation = "#BBB529", -- Annotations (e.g., @Component)
-	variable = "#9876AA", -- Class/instance/static variables (pinkish-purple)
+	annotation = "#B3AE60", -- Annotations (e.g., @Component)
+	variable = "#C77DBB", -- Class/instance/static variables (pinkish-purple)
 	search_bg = "#22535E", -- Other matches
 	inc_search_bg = "#00006B", -- During active search
 	cur_search_bg = "#00006B", -- Current match after search
 	flash_label_bg = "#FF007F", -- Flash.nvim label background
-	lsp_reference_text = "#424446", -- Selection background
+	lsp_reference_text = "#373B39", -- Selection background
 	eyeliner_bg = "#000000", -- eyeliner.nvim background
 	eyeliner_fg = "#FFFFFF", -- eyeliner.nvim background
-	float_border = "#CC7832",
-	title = "#CC7832",
-	special = "#AD9A53", -- xml tags, tree-sitter
+	float_border = "#CF8E6D",
+	title = "#CF8E6D",
+	special = "#D5B778", -- xml tags, tree-sitter
 }
 
 -- Default configuration
@@ -157,7 +157,7 @@ function M.load()
 	vim.api.nvim_set_hl(0, "@lsp.typemod.variable.readonly", { fg = colors.variable }) -- Readonly variables (pinkish-purple)
 	vim.api.nvim_set_hl(0, "@lsp.typemod.string.format", { fg = colors.keyword }) -- String format specifiers
 	vim.api.nvim_set_hl(0, "@lsp.typemod.type", { fg = colors.func }) -- Types (blue)
-    vim.api.nvim_set_hl(0, "@lsp.typemod.type.defaultLibrary", { fg = colors.keyword }) -- Default library types
+	vim.api.nvim_set_hl(0, "@lsp.typemod.type.defaultLibrary", { fg = colors.keyword }) -- Default library types
 
 	vim.api.nvim_set_hl(0, "LspReferenceText", { bg = colors.lsp_reference_text, underline = false }) -- Gray background for text references
 
