@@ -41,6 +41,20 @@ A discrete color theme based on Intellij's default dark theme, with support for 
 
 ## 📦 Installation
 
+### neovim >= 0.12
+```
+vim.pack.add({
+	{ src = "https://github.com/pmouraguedes/neodarcula.nvim" },
+})
+
+require("neodarcula").setup({
+	transparent = false,
+	dim = true,
+})
+vim.cmd([[colorscheme neodarcula]])
+```
+
+### lazy.nvim
 ```
     {
         "pmouraguedes/neodarcula.nvim",
@@ -49,7 +63,7 @@ A discrete color theme based on Intellij's default dark theme, with support for 
     },
 ```
 
-### Lazyvim example
+### Complete LazyVim example
 
 ```
 return {
