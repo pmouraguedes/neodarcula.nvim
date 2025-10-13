@@ -32,6 +32,7 @@ M.colors = {
 	float_border = "#CF8E6D",
 	title = "#CF8E6D",
 	special = "#D5B778", -- xml tags, tree-sitter
+	treesitter_context_bg = "#373B39",
 }
 
 -- Default configuration
@@ -131,6 +132,7 @@ function M.load()
 	vim.api.nvim_set_hl(0, "@constant", { fg = colors.constant })
 	vim.api.nvim_set_hl(0, "@attribute", { fg = colors.annotation })
 	vim.api.nvim_set_hl(0, "Special", { fg = colors.special })
+	vim.api.nvim_set_hl(0, "TreesitterContext", { bg = colors.treesitter_context_bg })
 
 	-- LSP Semantic Tokens
 	vim.api.nvim_set_hl(0, "@lsp.type.keyword", { fg = colors.keyword }) -- e.g., public, class, implements, enum
