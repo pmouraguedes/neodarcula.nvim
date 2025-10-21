@@ -33,6 +33,7 @@ M.colors = {
 	title = "#CF8E6D",
 	special = "#D5B778", -- xml tags, tree-sitter
 	treesitter_context_bg = "#373B39",
+    tab_selected_bg = "#273828",
 }
 
 -- Default configuration
@@ -60,7 +61,7 @@ function M.load()
 	local colors = M.colors
 	local cfg = M.config
 
-	-- TODO workaround, ,see bellow
+	-- TODO workaround, see bellow
 	local normal_bg = colors.bg
 	if cfg.transparent then
 		---@diagnostic disable-next-line: cast-local-type
@@ -99,6 +100,9 @@ function M.load()
 	vim.api.nvim_set_hl(0, "Search", { bg = colors.search_bg, fg = colors.fg, bold = false })
 	vim.api.nvim_set_hl(0, "IncSearch", { bg = colors.inc_search_bg, fg = colors.fg, bold = true })
 	vim.api.nvim_set_hl(0, "CurSearch", { bg = colors.cur_search_bg, fg = colors.fg, bold = true })
+
+    -- Tabs
+    vim.api.nvim_set_hl(0, "TabLineSel", { bg = colors.tab_selected_bg })
 
 	-- Syntax highlighting (fallback)
 	vim.api.nvim_set_hl(0, "Comment", { fg = colors.comment, italic = true })
@@ -164,7 +168,7 @@ function M.load()
 	vim.api.nvim_set_hl(0, "LspReferenceText", { bg = colors.lsp_reference_text, underline = false }) -- Gray background for text references
 
 	vim.api.nvim_set_hl(0, "FloatBorder", { fg = colors.float_border, bg = normal_bg })
-	vim.api.nvim_set_hl(0, "Title", { fg = colors.title, bg = normal_bg })
+	vim.api.nvim_set_hl(0, "Title", { fg = colors.title })
 
 	-- Telescope integration
 	vim.api.nvim_set_hl(0, "TelescopeBorder", { link = "FloatBorder" })
