@@ -8,11 +8,11 @@ M.colors = {
 	selection = "#214283", -- Selection background (more blue)
 	current_line = "#26282E", -- Current line highlight
 	string = "#6AAB73", -- Strings
-	number = "#56A8F5", -- Numbers
+	number = "#2A9F7C", -- Numbers
 	keyword = "#CF8E6D", -- Keywords (e.g., public, class, implements, enum)
 	comment = "#7A7E85", -- Comments
 	constant = "#C77DBB", -- Constants
-	type = "#CF8E6D", -- Types (used sparingly, not for enum/class names)
+	type = "#BCBEC4", -- Types (used sparingly, not for enum/class names)
 	func = "#56A8F5", -- Functions/Methods/Constructors declaration (blue)
 	operator = "#BCBEC4", -- Operators (matches foreground)
 	error = "#BC3F3C", -- Errors
@@ -127,12 +127,13 @@ function M.load()
 	-- Treesitter integration (fallback)
 	nvim_set_hl(0, "@keyword", { fg = colors.keyword })
 	nvim_set_hl(0, "@keyword.import", { fg = colors.keyword })
+	nvim_set_hl(0, "@type", { fg = colors.type })
+	nvim_set_hl(0, "@variable", { fg = colors.fg })
 	nvim_set_hl(0, "@namespace", { fg = colors.fg })
 	nvim_set_hl(0, "@string", { fg = colors.string })
 	nvim_set_hl(0, "@number", { fg = colors.number })
 	nvim_set_hl(0, "@function", { fg = colors.func })
 	nvim_set_hl(0, "@function.call", { fg = colors.fg })
-	nvim_set_hl(0, "@variable", { fg = colors.variable })
 	nvim_set_hl(0, "@comment", { fg = colors.comment, italic = true })
 	nvim_set_hl(0, "@type", { fg = colors.type })
 	nvim_set_hl(0, "@constant", { fg = colors.constant })
@@ -147,7 +148,7 @@ function M.load()
 	nvim_set_hl(0, "@lsp.type.interface", { fg = colors.fg }) -- Interface names
 	nvim_set_hl(0, "@lsp.type.enum", { fg = colors.fg }) -- Enum names (e.g., InventoryError)
 	nvim_set_hl(0, "@lsp.type.method", { fg = colors.fg }) -- Default for all methods
-	nvim_set_hl(0, "@lsp.type.function", { fg = colors.fg }) -- Function/method calls
+	nvim_set_hl(0, "@lsp.type.function", { fg = colors.func }) -- Function/method calls
 	nvim_set_hl(0, "@lsp.type.variable", { fg = colors.fg }) -- Variables (general)
 	nvim_set_hl(0, "@lsp.type.property", { fg = colors.variable }) -- Class/instance/static fields
 	nvim_set_hl(0, "@lsp.type.parameter", { fg = colors.fg }) -- Parameters
