@@ -193,18 +193,10 @@ function M.load()
 	-- faz-lua will inherit Title and other groups automatically
 
 	-- Flash.nvim
-	nvim_set_hl(0, "FlashLabel", {
-		fg = colors.flash_label_bg,
-		bg = normal_bg,
-		bold = true,
-	})
+	nvim_set_hl(0, "FlashLabel", { fg = colors.flash_label_bg, bg = normal_bg, bold = true, })
 
 	-- eyeliner.nvim
-	nvim_set_hl(
-		0,
-		"EyelinerPrimary",
-		{ fg = colors.eyeliner_fg, bg = colors.eyeliner_bg, bold = true, underline = false }
-	)
+	nvim_set_hl(0, "EyelinerPrimary", { fg = colors.eyeliner_fg, bg = colors.eyeliner_bg, bold = true, underline = false })
 	nvim_set_hl(0, "EyelinerSecondary", { fg = colors.eyeliner_fg, bg = colors.eyeliner_bg, underline = false })
 end
 
