@@ -134,6 +134,7 @@ function M.load()
 	nvim_set_hl(0, "@number", { fg = colors.number })
 	nvim_set_hl(0, "@function", { fg = colors.func })
 	nvim_set_hl(0, "@function.call", { fg = colors.fg })
+	nvim_set_hl(0, "@function.method.call.go", { fg = colors.fg })
 	nvim_set_hl(0, "@comment", { fg = colors.comment, italic = true })
 	nvim_set_hl(0, "@type", { fg = colors.type })
 	nvim_set_hl(0, "@constant", { fg = colors.constant })
@@ -145,13 +146,18 @@ function M.load()
 	nvim_set_hl(0, "@lsp.type.keyword", { fg = colors.keyword }) -- e.g., public, class, implements, enum
 	nvim_set_hl(0, "@lsp.type.namespace", { fg = colors.fg }) -- Package paths
 	nvim_set_hl(0, "@lsp.type.class", { fg = colors.fg }) -- Class names
+	nvim_set_hl(0, "@lsp.typemod.class.public", { fg = colors.fg }) -- Class names
+	nvim_set_hl(0, "@lsp.typemod.class.typeArgument", { fg = colors.fg }) -- Class names
 	nvim_set_hl(0, "@lsp.type.interface", { fg = colors.fg }) -- Interface names
 	nvim_set_hl(0, "@lsp.type.enum", { fg = colors.fg }) -- Enum names (e.g., InventoryError)
 	nvim_set_hl(0, "@lsp.type.method", { fg = colors.fg }) -- Default for all methods
-	nvim_set_hl(0, "@lsp.type.function", { fg = colors.func }) -- Function/method calls
+	nvim_set_hl(0, "@lsp.type.function", { fg = colors.fg }) -- Function/method calls
+	nvim_set_hl(0, "@lsp.mod.definition", { fg = colors.func }) -- Function/method definition
 	nvim_set_hl(0, "@lsp.type.variable", { fg = colors.fg }) -- Variables (general)
+	nvim_set_hl(0, "@lsp.typemod.variable.definition", { fg = colors.fg }) -- Variables (general)
 	nvim_set_hl(0, "@lsp.type.property", { fg = colors.variable }) -- Class/instance/static fields
 	nvim_set_hl(0, "@lsp.type.parameter", { fg = colors.fg }) -- Parameters
+	nvim_set_hl(0, "@lsp.typemod.parameter.definition", { fg = colors.fg }) -- Parameters
 	nvim_set_hl(0, "@lsp.type.constant", { fg = colors.constant })
 	nvim_set_hl(0, "@lsp.type.string", { fg = colors.string })
 	nvim_set_hl(0, "@lsp.type.number", { fg = colors.number })
@@ -166,6 +172,7 @@ function M.load()
 	nvim_set_hl(0, "@lsp.typemod.variable.readonly", { fg = colors.variable }) -- Readonly variables (pinkish-purple)
 	nvim_set_hl(0, "@lsp.typemod.string.format", { fg = colors.keyword }) -- String format specifiers
 	nvim_set_hl(0, "@lsp.typemod.type", { fg = colors.func }) -- Types (blue)
+	nvim_set_hl(0, "@lsp.type.modifier", { fg = colors.keyword }) -- Types
 	nvim_set_hl(0, "@lsp.typemod.type.defaultLibrary", { fg = colors.keyword }) -- Default library types
 
 	nvim_set_hl(0, "LspReferenceText", { bg = colors.lsp_reference_text, underline = false }) -- Gray background for text references
