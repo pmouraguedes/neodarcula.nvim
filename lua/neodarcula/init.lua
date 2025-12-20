@@ -33,7 +33,7 @@ M.colors = {
 	title = "#CF8E6D",
 	special = "#D5B778", -- xml tags, tree-sitter
 	treesitter_context_bg = "#373B39",
-    tab_selected_bg = "#273828",
+	tab_selected_bg = "#273828",
 }
 
 -- Default configuration
@@ -68,7 +68,7 @@ function M.load()
 		normal_bg = nil
 	end
 
-    local nvim_set_hl = vim.api.nvim_set_hl
+	local nvim_set_hl = vim.api.nvim_set_hl
 
 	-- Apply highlights
 	-- TODO somehow this doesn't work
@@ -103,8 +103,8 @@ function M.load()
 	nvim_set_hl(0, "IncSearch", { bg = colors.inc_search_bg, fg = colors.fg, bold = true })
 	nvim_set_hl(0, "CurSearch", { bg = colors.cur_search_bg, fg = colors.fg, bold = true })
 
-    -- Tabs
-    nvim_set_hl(0, "TabLineSel", { bg = colors.tab_selected_bg })
+	-- Tabs
+	nvim_set_hl(0, "TabLineSel", { bg = colors.tab_selected_bg })
 
 	-- Syntax highlighting (fallback)
 	nvim_set_hl(0, "Comment", { fg = colors.comment, italic = true })
@@ -116,6 +116,7 @@ function M.load()
 	nvim_set_hl(0, "Function", { fg = colors.func })
 	nvim_set_hl(0, "Operator", { fg = colors.operator })
 	nvim_set_hl(0, "Identifier", { fg = colors.fg })
+	nvim_set_hl(0, "Statement", { fg = colors.keyword })
 
 	-- Diagnostics (LSP)
 	nvim_set_hl(0, "DiagnosticError", { fg = colors.error })
