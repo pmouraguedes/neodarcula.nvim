@@ -135,7 +135,7 @@ function M.load()
 	nvim_set_hl(0, "@number", { fg = colors.number })
 	nvim_set_hl(0, "@function", { fg = colors.func })
 	nvim_set_hl(0, "@function.call", { fg = colors.fg })
-	nvim_set_hl(0, "@function.method.call.go", { fg = colors.fg })
+	nvim_set_hl(0, "@function.method.call", { fg = colors.fg })
 	nvim_set_hl(0, "@comment", { fg = colors.comment, italic = true })
 	nvim_set_hl(0, "@type", { fg = colors.type })
 	nvim_set_hl(0, "@constant", { fg = colors.constant })
@@ -156,7 +156,7 @@ function M.load()
 	nvim_set_hl(0, "@lsp.mod.definition", { fg = colors.func }) -- Function/method definition
 	nvim_set_hl(0, "@lsp.type.variable", { fg = colors.fg }) -- Variables (general)
 	nvim_set_hl(0, "@lsp.typemod.variable.definition", { fg = colors.fg }) -- Variables (general)
-	nvim_set_hl(0, "@lsp.type.property", { fg = colors.variable }) -- Class/instance/static fields
+	nvim_set_hl(0, "@lsp.type.property", { fg = colors.fg }) -- Class/instance/static fields
 	nvim_set_hl(0, "@lsp.type.parameter", { fg = colors.fg }) -- Parameters
 	nvim_set_hl(0, "@lsp.typemod.parameter.definition", { fg = colors.fg }) -- Parameters
 	nvim_set_hl(0, "@lsp.type.constant", { fg = colors.constant })
