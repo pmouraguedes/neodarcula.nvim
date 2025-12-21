@@ -3,7 +3,7 @@ local M = {}
 
 M.colors = {
 	fg = "#BCBEC4", -- General text
-	bg_inactive = "#000000", -- Inactive window background
+	bg_inactive = "#26282E", -- Inactive window background
 	bg = "#1E1F22",
 	selection = "#214283", -- Selection background (more blue)
 	current_line = "#26282E", -- Current line highlight
