@@ -2,12 +2,10 @@
 local M = {}
 
 M.colors = {
-	fg = "#BCBEC4", -- General text
-	bg_inactive = "#26282E", -- Inactive window background
-	bg_inactive_transparent = "#1E1F22", -- Inactive window background
-	current_line = "#26282E", -- Current line highlight
-	current_line_transparent = "#1E1F22", -- Current line highlight
-	bg = "#1E1F22",
+	fg = "#DDDDDD",
+    bg = "#000001",
+	bg_inactive = "#151515", -- Inactive window background
+	current_line = "#151515", -- Current line highlight
 	selection = "#214283", -- Selection background (more blue)
 	string = "#6AAB73", -- Strings
 	number = "#2A9F7C", -- Numbers
@@ -36,6 +34,7 @@ M.colors = {
 	special = "#D5B778", -- xml tags, tree-sitter
 	treesitter_context_bg = "#373B39",
 	tab_selected_bg = "#273828",
+	branch_fg = "#FF0000",
 }
 
 -- Default configuration
@@ -79,16 +78,18 @@ function M.load()
 
 	-- NormalNC (inactive windows)
     -- if transparent, make inactive window bg a bit darker
-	local normalnc_bg = (cfg.dim and cfg.transparent and colors.bg_inactive_transparent) or (cfg.dim and colors.bg_inactive) or nil
+	local normalnc_bg = (cfg.dim and colors.bg_inactive) or nil
 	nvim_set_hl(0, "NormalNC", { fg = colors.fg, bg = normalnc_bg })
 
     -- if transparent, make current line bg a bit darker
-    local current_line = (cfg.transparent and colors.current_line_transparent) or (colors.current_line) or nil
+    local current_line = colors.current_line
     nvim_set_hl(0, "CursorLine", { bg = current_line })
     nvim_set_hl(0, "CursorColumn", { bg = current_line })
     nvim_set_hl(0, "CursorLineNr", { fg = colors.fg, bg = current_line })
-    nvim_set_hl(0, "StatusLine", { fg = colors.fg, bg = current_line })
+    nvim_set_hl(0, "StatusLine", { fg = colors.fg, bg = current_line, bold = true })
     nvim_set_hl(0, "StatusLineNC", { fg = colors.gray, bg = current_line })
+    -- custom hl group to use in the statusline, e.g. "%#StatusLineGitBranch#%{v:lua.git_branch()}"
+    nvim_set_hl(0, "StatusLineGitBranch", { fg = colors.branch_fg, bg = current_line })
     nvim_set_hl(0, "Pmenu", { fg = colors.fg, bg = current_line })
     nvim_set_hl(0, "LineNr", {})
 
