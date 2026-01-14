@@ -86,10 +86,10 @@ function M.load()
     nvim_set_hl(0, "CursorLine", { bg = current_line })
     nvim_set_hl(0, "CursorColumn", { bg = current_line })
     nvim_set_hl(0, "CursorLineNr", { fg = colors.fg, bg = current_line })
-    nvim_set_hl(0, "StatusLine", { fg = colors.fg, bg = current_line, bold = true })
-    nvim_set_hl(0, "StatusLineNC", { fg = colors.gray, bg = current_line })
+    nvim_set_hl(0, "StatusLine", { fg = colors.fg, bg = colors.tab_selected_bg, bold = true })
+    nvim_set_hl(0, "StatusLineNC", { fg = colors.gray, bg = colors.tab_selected_bg, })
     -- custom hl group to use in the statusline, e.g. "%#StatusLineGitBranch#%{v:lua.git_branch()}"
-    nvim_set_hl(0, "StatusLineGitBranch", { fg = colors.branch_fg, bg = current_line })
+    nvim_set_hl(0, "StatusLineGitBranch", { fg = colors.branch_fg, bg = colors.tab_selected_bg, })
     nvim_set_hl(0, "Pmenu", { fg = colors.fg, bg = current_line })
     nvim_set_hl(0, "LineNr", {})
 
