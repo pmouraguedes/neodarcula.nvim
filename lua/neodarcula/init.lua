@@ -3,7 +3,7 @@ local M = {}
 
 M.colors = {
 	fg = "#DDDDDD",
-    bg = "#000001",
+	bg = "#000001",
 	bg_inactive = "#151515", -- Inactive window background
 	current_line = "#151515", -- Current line highlight
 	selection = "#214283", -- Selection background (more blue)
@@ -77,26 +77,26 @@ function M.load()
 	nvim_set_hl(0, "Normal", { fg = colors.fg, bg = normal_bg })
 
 	-- NormalNC (inactive windows)
-    -- if transparent, make inactive window bg a bit darker
+	-- if transparent, make inactive window bg a bit darker
 	local normalnc_bg = (cfg.dim and colors.bg_inactive) or nil
 	nvim_set_hl(0, "NormalNC", { fg = colors.fg, bg = normalnc_bg })
 
-    -- if transparent, make current line bg a bit darker
-    local current_line = colors.current_line
-    nvim_set_hl(0, "CursorLine", { bg = current_line })
-    nvim_set_hl(0, "CursorColumn", { bg = current_line })
-    nvim_set_hl(0, "CursorLineNr", { fg = colors.fg, bg = current_line })
-    nvim_set_hl(0, "StatusLine", { fg = colors.fg, bg = colors.tab_selected_bg, bold = true })
-    nvim_set_hl(0, "StatusLineNC", { fg = colors.gray, bg = colors.tab_selected_bg, })
-    -- custom hl group to use in the statusline, e.g. "%#StatusLineGitBranch#%{v:lua.git_branch()}"
-    nvim_set_hl(0, "StatusLineGitBranch", { fg = colors.branch_fg, bg = colors.tab_selected_bg, })
-    nvim_set_hl(0, "Pmenu", { fg = colors.fg, bg = current_line })
-    nvim_set_hl(0, "LineNr", {})
+	-- if transparent, make current line bg a bit darker
+	local current_line = colors.current_line
+	nvim_set_hl(0, "CursorLine", { bg = current_line })
+	nvim_set_hl(0, "CursorColumn", { bg = current_line })
+	nvim_set_hl(0, "CursorLineNr", { fg = colors.fg, bg = current_line })
+	nvim_set_hl(0, "StatusLine", { fg = colors.fg, bg = colors.tab_selected_bg, bold = true })
+	nvim_set_hl(0, "StatusLineNC", { fg = colors.gray, bg = colors.tab_selected_bg })
+	-- custom hl group to use in the statusline, e.g. "%#StatusLineGitBranch#%{v:lua.git_branch()}"
+	nvim_set_hl(0, "StatusLineGitBranch", { fg = colors.branch_fg, bg = colors.tab_selected_bg })
+	nvim_set_hl(0, "Pmenu", { fg = colors.fg, bg = current_line })
+	nvim_set_hl(0, "LineNr", {})
 
-	nvim_set_hl(0, "NormalFloat", { fg = colors.fg, bg = normal_bg, })
+	nvim_set_hl(0, "NormalFloat", { fg = colors.fg, bg = normal_bg })
 	nvim_set_hl(0, "Visual", { bg = colors.selection })
 
-	nvim_set_hl(0, "VertSplit", { fg = colors.gray, bg = normal_bg, })
+	nvim_set_hl(0, "VertSplit", { fg = colors.gray, bg = normal_bg })
 	nvim_set_hl(0, "PmenuSel", { bg = colors.selection })
 	nvim_set_hl(0, "Search", { bg = colors.search_bg, fg = colors.fg, bold = false })
 	nvim_set_hl(0, "IncSearch", { bg = colors.inc_search_bg, fg = colors.fg, bold = true })
@@ -104,6 +104,12 @@ function M.load()
 
 	-- Tabs
 	nvim_set_hl(0, "TabLineSel", { bg = colors.tab_selected_bg })
+
+	-- Markdown
+	nvim_set_hl(0, "markdownH1", { bg = colors.title })
+	nvim_set_hl(0, "markdownH2", { bg = colors.func })
+	nvim_set_hl(0, "markdownH3", { bg = colors.number })
+	nvim_set_hl(0, "markdownH4", { bg = colors.constant })
 
 	-- Syntax highlighting (fallback)
 	nvim_set_hl(0, "Comment", { fg = colors.comment, italic = true })
@@ -141,6 +147,12 @@ function M.load()
 	nvim_set_hl(0, "@attribute", { fg = colors.annotation })
 	nvim_set_hl(0, "Special", { fg = colors.special })
 	nvim_set_hl(0, "TreesitterContext", { bg = colors.treesitter_context_bg })
+
+	-- Markdown
+	nvim_set_hl(0, "@markup.heading.1", { fg = colors.title })
+	nvim_set_hl(0, "@markup.heading.2", { fg = colors.func })
+	nvim_set_hl(0, "@markup.heading.3.markdown", { fg = colors.number })
+	nvim_set_hl(0, "@markup.heading.4.markdown", { fg = colors.constant })
 
 	-- LSP Semantic Tokens
 	nvim_set_hl(0, "@lsp.type.keyword", { fg = colors.keyword }) -- e.g., public, class, implements, enum
@@ -192,7 +204,7 @@ function M.load()
 	-- faz-lua will inherit Title and other groups automatically
 
 	-- Flash.nvim
-	nvim_set_hl(0, "FlashLabel", { fg = colors.flash_label_bg, bg = normal_bg, bold = true, })
+	nvim_set_hl(0, "FlashLabel", { fg = colors.flash_label_bg, bg = normal_bg, bold = true })
 
 	-- eyeliner.nvim
 	nvim_set_hl(0, "EyelinerPrimary", { fg = colors.eyeliner_fg, bg = colors.eyeliner_bg, bold = true, underline = false })
