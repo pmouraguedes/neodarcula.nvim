@@ -9,6 +9,18 @@ endif
 
 let g:colors_name = 'neodarcula'
 
+" If Neovim with Lua support, use the Lua module
+if has('nvim-0.8') && luaeval('pcall(require, "neodarcula")')
+  lua << EOF
+    require("neodarcula").load()
+EOF
+  finish
+endif
+
+" ============================================================================
+" Fallback for plain Vim (Vimscript implementation)
+" ============================================================================
+
 " Terminal color support check
 if !has('gui_running') && &t_Co < 256
   finish
